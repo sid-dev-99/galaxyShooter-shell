@@ -1,0 +1,17 @@
+#!/bin/sh
+
+
+
+stty -icanon -echo time 20 min 0 
+
+
+while true; do 
+	echo 'START'
+	key=$(dd bs=1 count=1 2>/dev/null)
+        
+	 if [ "$key" != '' ] && { [ "$key" == 'w' ] || [ "$key" == 's' ] || [ "$key" == 'a' ] || [ "$key" == 'f' ] || [ "$key" == ' ' ]; }; then
+		echo "you have pressed the valid key for the game"
+		echo "key pressed: $key"
+	fi
+	echo 'END'
+done 
