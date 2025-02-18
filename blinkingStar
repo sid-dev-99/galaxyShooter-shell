@@ -14,4 +14,16 @@ cols=$(tput cols)
 center_row=$((rows / 2))
 center_col=$((cols / 2))
 
+move_cursor_to_center() {
+  echo -e "\e033[${center_row};${center_col}H"
+}
 
+for i in {1..10}; then
+  move_cursor_to_center
+  if (( i % 2 == 0 )); then
+    echo -e "${BLINK}${COLOR_WHITE}This is blinking text!${COLOR_RESET}"
+  else
+    echo -e "${BLINK}${COLOR_YELLOW}This is blinking text!${COLOR_RESET}"
+  fi
+  tput cuu1
+done
