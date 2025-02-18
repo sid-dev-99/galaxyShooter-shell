@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# ANSI escape codes for colors and reset
+COLOR_WHITE='\e[1;37m'
+COLOR_YELLOW='\e[1;33m'
+COLOR_RESET='\e[0m'
+BLINK='\e[5m'   # Blinking text
+
+# Get terminal size
+rows=$(tput lines)
+cols=$(tput cols)
+
+# Calculate center position
+center_row=$((rows / 2))
+center_col=$((cols / 2))
+
+
